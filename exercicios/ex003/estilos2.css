@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+p{
+text-align: justify;
+color: brown;
+}
+
+body{
+    background-color: rgba(47, 202, 194, 0.548);
+}

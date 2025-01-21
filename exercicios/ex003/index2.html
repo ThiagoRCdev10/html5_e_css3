@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lico</title>
+    <link rel="shortcut icon" href="pao.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="estilos.css">
+   <style>
+    mark{
+        background-color: aqua;
+    }
+   </style>
+
+</head>
+<body>
+    <h1>Colocando imagens</h1>
+    <img src="foftopapai.png" alt="foto papai">
+    <p></p>
+    <audio src="musicas/coldplay-a-sky-full-of-stars.mp3" controls></audio>
+    <p>outro meio de mostrar audio</p>
+    <audio preload="metadata" controls loop>
+        <source src="musicas/coldplay-a-sky-full-of-stars.mp3" type="audio/mp3">
+        <source src="musicas/coldplay-a-sky-full-of-stars.ogg" type="audio/ogg">
+        <source src="musicas/coldplay-a-sky-full-of-stars.wav" type="audio/wav">
+        <p> Se não tocar o áudio para fazer o download clique <a href="musicas/coldplay-a-sky-full-of-stars.mp3" download="coldplay-a-sky-full-of-stars.mp3" type="audio/mp3">aqui</a></p>
+    </audio>
+    <p style="color: rgb(255, 0, 0);">Abaixo você verá uma imagem que está numa mesma pasta.</p>
+    <p>Logo <mark>HTML5</mark></p>
+    <img src="logo/logoHTML5-200.png" alt="Logo HTLM5">
+    <p>Logo <mark>CSS3</mark></p>
+    <img src="logo/logoCSS3-200.png" alt="logo CSS3">
+    <p>Logo JavaScriot</p>
+    <img src="https://logospng.org/wp-content/uploads/javascript.png" alt="Logo JavaScript" width="200px">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, sequi. Corporis vero error minus ex ad voluptas eaque officiis suscipit! Dignissimos soluta optio, corrupti sit aliquid temporibus vitae tenetur nisi Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis voluptatum inventore deserunt eaque, laudantium tempore dolorum similique sunt labore quisquam, excepturi, quia omnis consectetur delectus non harum aliquam soluta totam!</p>
+    <p><address>Rua Paulo Barreto 870</address></p>
+    <pre>
+    <code>
+            #include &lt;stdio.h&gt;
+
+            int main(void) {
+            // Declara uma variável inteira chamada "idade"
+            int idade;
+            
+            // Atribui o valor 25 à variável "idade"
+            idade = 25;
+            
+            printf("Minha idade é: %d\n", idade);
+            
+            return 0;
+            }
+    </code>
+    </pre>
+    <p>Estou estudando <abbr title="Hypertext Mrkuno Language">HTML</abbr> e <abbr title="Cascading Style Sheets">CSS</abbr> e como é masso isso aqui.</p>
+    <p>Vamos colocar esse texto invertido: <bdo dir="rtl">Testando a a tag de inversão</bdo></p>
+
+    <h2>Lista Ordenada:</h2>
+    <ol type="1" start="1">
+        <li>Estudar</li>
+        <li>Ler</li>
+        <li>Malhar</li>
+        <li>Correr</li>
+    </ol>
+
+    <h2>Lista Não-Ordenada:</h2>
+    <ul type="disc"> <!-- disc, circle, square -->
+        <li>Banana</li>
+        <li>Maçã</li>
+        <li>Goiaba</li>
+        <li>Limão</li>
+    </ul>
+
+    <ol type="1" start="1">
+        <li>Estudar</li>
+        <ul type="disc"> <!-- disc, circle, square -->
+            <li>Banana</li>
+            <li>Maçã</li>
+            <li>Goiaba</li>
+            <li>Limão</li>
+        </ul>
+        <li>Ler</li>
+        <li>Malhar</li>
+        <li>Correr</li>
+    </ol>
+
+    <h2>Lista de Definições</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Liguagem de Marcação para a criação de um site.</dd>
+    </dl>
+
+    <p>Esse é o site do youtube: <a href="https://www.youtube.com">Site Youtube</a></p> <!--link interno-->
+   <p>Esse é o site do youtube: <a href="https://www.youtube.com" target="_blank" rel="external">Site Youtube</a></p><!--link externo-->
+
+   <p>Acessar a página 2 clique aqui: <a href="pag2.html" rel="next"><img src="setaDireitta.png" width="50px" alt="foto papai"></a></p>
+
+
+   <h1>Links para download</h1>
+   <p>Veja o site com todos os tipos de arquivos para download <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="external"><b>aqui</b></a>.</p>
+   <ul>
+    <li><a href="livros/o-Leao-a-feiticeira-e-o-guarda-roupa.pdf" download="o-Leao-a-feiticeira-e-o-guarda-roupa.pdf" type="application/pdf">livro 1 pdf</a></li>
+    <li><a href="livros/o-Leao-a-feiticeira-e-o-guarda-roupa.zip" download="o-Leao-a-feiticeira-e-o-guarda-roupa.zip" type="application/zip">livro 1 zipado</a></li>
+   </ul>
+   <h1>Imegem que se modifica dependendo do zoom no navegador ou dependendo do dispositivo</h1>
+   <picture>
+        <source media="(max-width: 750px)" srcset="imagens/FotoP.jpg" type="image/jpg">
+        <source media="(max-width: 1050px)" srcset="imagens/FotoM.jpg" type="image/jpg">
+        <img src="imagens/FotoG.png" alt="fotoG">
+   </picture>
+   <h1>Colocando Vídeos no meu site</h1>
+   <video src="videoCidadeNoite.mp4" width="300px" controls ></video>
+
+   <p>outro jeito de colocar vídeos é assim</p>
+   <video controls>
+        <source src="videoCidadeNoite.mp4" type="video/mp4">
+
+   </video>
+
+   <h1>Inserindo Vídeos do Youtube</h1>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/rWIB2y-kLTQ?si=S4QuowGY9OlDrCt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
