@@ -9,7 +9,74 @@
         body{
             background-image: url('imagens/dart.jpg');
             background-position: center ;
+            background-size:;
         }
+
+        
+
+
+        table{
+            width: 600px;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: green;
+            position: relative;
+        }
+
+        tbody tr:nth-child(odd){
+            background-color: rgb(4, 212, 4);
+        }
+
+        caption{
+            font-weight: bold;
+            font-size: 1.8em;
+            padding-bottom: 20px;
+        }
+
+        thead{
+            background-color: rgb(4, 104, 4);
+        }
+
+        thead th{
+            color: rgb(73, 221, 73);
+            text-shadow: 1px 1px 3px black;
+            font-size: 1.4em;
+        }
+
+        thead > tr > th{
+            position: sticky;
+            top: -2px;
+            background-color: rgb(4, 104, 4);
+        }
+        .fixar{
+            position: sticky;
+            top: -2;
+            background-color: rgb(4, 104, 4);
+        }
+
+        th, td{
+            border: 3px solid rgb(94, 255, 62);
+            padding: 8px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        tfoot tr td{
+            color: rgb(0, 255, 98);
+            font-style: italic;
+            font-size: 1.1em;
+            width: 210px;
+        }
+
+        tfoot tr th{
+            color: rgb(0, 0, 0);
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+
     </style>
 </head>
 <body>
@@ -30,5 +97,241 @@
     <h3>Alinhamento na Vertical</h3>
     <p>Exemplo de código:</p>
     <img src="imagens/alinhamento vertical.png" alt="alinahmento na vertical">
+    
+    <h3>
+        Dica parar Envelopar com uma TAG
+    </h3>
+    <p>Um atalho no VSCode é usar o Ctrl + Shift + P. Clicar na opção Emmet: Wrap with Abbreviation. Por fim diga o nome da TAG. </p>
+    
+    <h3>Tabelas</h3>
+    <pre>
+        Hierarquia de Tabelas (simples)
+        TABLE = tabela (table)
+            TABLE ROW = linha de tabela (tr)
+                TABLE HEADER = cabeçalho de tabela (th)
+                TABLE DATA = dado da tabela (td)
+    </pre>
+    <p><strong>Exemplo de Tabela</strong></p>
+
+<table>
+    <tr><!--Primeira Linha-->
+        <td>A1</td>
+        <td>B1</td>
+        <td>C1</td>
+    </tr>
+
+    <tr><!--Segunda Linha-->
+        <td>A2</td>
+        <td>B2</td>
+        <td>C2</td>
+    </tr>
+
+    <tr><!--Terceira Linha-->
+        <td>A3</td>
+        <td>B3</td>
+        <td>C3</td>
+    </tr>
+
+    <tr><!--Quarta Linha-->
+        <td>A4</td>
+        <td>B4</td>
+        <td>C4</td>
+    </tr>
+</table>
+
+
+<pre>
+    Hierarquia de Tabelas (Grandes)
+    TABLE (table)
+        CAPTION (caption)
+        THEAD (thead)
+            TR, TD, TH
+        TBODY (tbody)
+            TR, TD, TH
+        TFOOT (tfoot)
+            TR, TD, TH
+</pre>
+
+<p>Existe uma pseudo-classe para fazer o efeito zebrado nas tabelças:</p>
+<p>na linha <strong>tr</strong> a gente coloca a pseudoi-classe <strong>:nth-child()</strong> de al maneira que fique assim <strong>tr:nth-child()</strong>. Exemplo: <strong>tr:nth-child(odd) ou tr:nth-child(2n-1)</strong> é prar impar <strong>tr:nth-child(even) ou tr:nth-child(2n)</strong> é pra par e <strong>tr:nth-child(3n)</strong> pula de 3 em 3 <strong>tr:nth-child(4n)</strong> pula de 4 em 4.</p>
+<img src="imagens/efeito zebrado.png" alt="efeito zebrado">
+
+<p>Além disso existe a TAG <strong>scope</strong> que ser para dizer para os mecanismos de busaca o que é coluna linha etc...</p>
+<p>Exemplo:</p>
+<pre>
+    scope="col"    parar dizer que aquele título é de uma coluna
+    scope="row"    parar dizer que aquele título é de uma linha
+</pre>
+<p><strong>Exemplo de Tabela</strong></p>
+
+<table>
+    <caption>
+        Valores de Caixas d'água da Fortlev
+    </caption>
+    <thead>
+        <tr>
+            <th>Volume da piscina</th>
+            <th>Valores</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>500L</td>
+            <td>R$ 266,90</td>
+        </tr>
+        <tr>
+            <td>750L</td>
+            <td>R$ 440,00</td>
+        </tr>
+        <tr>
+            <td>1000L</td>
+            <td>R$ 413,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Marca</th>
+            <td>Fortlev</td>
+        </tr>
+    </tfoot>
+</table>
+
+<p>Para fazer mesclagem pode usar as seguntes prprriedades das tabelas:</p>
+<pre>
+    colspan="3" , nesse caso ocorre a mesclagem de 3 colunas a parrtir da sua célula de rerferência
+    rolspan="2" , nesse caso ocorre a mesclagem de 2 linhas a parrtir da sua célula de rerferência
+</pre>
+
+<p>Exemplo 1:</p>
+
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td rowspan="2">3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td colspan="3">8</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td rowspan="3">10</td>
+        <td colspan="2">11</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+    </tr>
+</table>
+
+<p>Exemplo 2:</p>
+
+<table>
+    <tr>
+        <td colspan="4">A</td>
+        <td rowspan="4">B</td>
+    </tr>
+    <tr>
+        <td rowspan="4">C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>G</td>
+        <td>H</td>
+        <td>I</td>
+    </tr>
+    <tr>
+        <td>J</td>
+        <td>L</td>
+        <td>M</td>
+    </tr>
+    <tr>
+        <td colspan="4">N</td>
+    </tr>
+</table>
+
+
+<p>Exemplo 3:</p>
+
+<table>
+     <thead>
+        <tr>
+            <th rowspan="2" scope="col">Área</th>
+            <th rowspan="2" scope="col">Disciplina</th>
+            <th colspan="2" scope="colgroup">Notas</th>
+            <th rowspan="2" scope="col">Média</th>
+        </tr>
+
+        <tr>
+            <th scope="col" class="fixar">Nota 1</th>
+            <th scope="col" class="fixar">Nota 2</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+            <th rowspan="4" scope="rowgroup">Exatas</th>
+            <td>Matemática</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Física</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Química</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Biologia</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <th colspan="4" scope="row">Média de Exatas</th>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <th rowspan="2" scope="rowgroup">Humanas</th>
+            <td>História</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Geogrrafiaa</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <th colspan="4" scope="row">Média de Humanas</th>
+            <td>0.0</td>
+        </tr> 
+     </tbody>
+</table>
+
+
+<p>Uma dica pra selecionarr uma coluna toda</p>
+<img src="imagens/selecionar uma coluna toda.png" alt="selecionar uma coluna toda">
+
+
 </body>
 </html>
+
